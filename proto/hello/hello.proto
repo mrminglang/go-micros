@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+//命名空间
+package hello;
+
+option go_package ="../hello"; // 包声明
+
+service MicroHello {
+  rpc Hello(HelloRequest) returns (HelloResponse) {}
+}
+
+message HelloRequest {
+  string name = 1;
+  repeated string actions = 2;
+}
+
+message HelloResponse {
+  int32 code = 1;
+  string msg = 2;
+}
